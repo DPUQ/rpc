@@ -1,3 +1,9 @@
+/**
+* Problem B: Buggy Robot
+* Status: YES
+* Issue: Graph (BFS)
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 typedef pair<int, int> ii;
@@ -57,7 +63,7 @@ void bfs(point p){
 				nj = curr.pos.second;
 				if(ni >= n || matriz[ni][nj] == '#')
 					ni--;
-			}	
+			}
 			if(isValid(ni, nj, curr.free + 1, curr. c)){
  				point temp = {ii(ni, nj), curr.c, curr.free + 1};
 				q.push(temp);

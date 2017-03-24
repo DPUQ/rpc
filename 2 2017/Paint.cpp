@@ -1,3 +1,9 @@
+/**
+* Problem H: Paint
+* Status: YES
+* Issue: Data Structures
+*/
+
 #include <bits/stdc++.h>
 using namespace std ;
 

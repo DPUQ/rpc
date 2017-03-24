@@ -1,3 +1,9 @@
+/**
+* Problem J: Shopping
+* Status: YES
+* Issue: Data Structures (Segment Tree), Divide & Conquer
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 #define debug(x) cout << #x << " = " << x << endl;

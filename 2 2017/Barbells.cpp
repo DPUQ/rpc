@@ -1,3 +1,9 @@
+/**
+* Problem L: Barbells
+* Status: YES
+* Issue: Brute-force, Bitmask
+*/
+
 #include<bits/stdc++.h>
 
 using namespace std;

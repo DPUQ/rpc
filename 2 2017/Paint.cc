@@ -1,3 +1,9 @@
+/**
+* Problem H: Paint
+* Status: YES
+* Issue: DP
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long ll;

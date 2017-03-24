@@ -1,3 +1,9 @@
+/**
+* Problem G: Maximum island
+* Status: YES
+* Issue: Graph (Flood fill, Maximum Bipartite Matching)
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 typedef pair<int, int> ii;
@@ -65,7 +71,7 @@ int main(){
 			}
 		}
 	}
-	
+
 	int id = 0;
 	int ni, nj, u, v;
 	map<ii, int> mapa;
@@ -95,7 +101,7 @@ int main(){
 			}
 		}
 	}
-	
+
 	VI mr;
     VI mc;
     int res=BipartiteMatching(w,mr,mc);

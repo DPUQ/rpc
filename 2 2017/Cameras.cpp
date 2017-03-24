@@ -1,3 +1,9 @@
+/**
+* Problem C: Cameras
+* Status: YES
+* Issue: Data Structures (Fenwick Tree)
+*/
+
 #include <bits/stdc++.h>
 
 using namespace std;
