@@ -155,25 +155,25 @@ int main(){
 
 	ios::sync_with_stdio(false);
 	cin.tie(NULL);
-	int nCasos;
-    llui numero;
-    llui factsum;
-    cin >> nCasos;
-    while(nCasos--)
+
+	int t;
+    llui n,factsum;
+    cin >> t;
+    while(t--)
     {
-        cin >> numero;
-        fact(numero);
+        cin >> n;
+        fact(n);
         factsum = 1;
         for (std::map<llui,int>::iterator it=factors.begin(); it!=factors.end(); ++it)
         {
             factsum *= factaux(it -> first,it->second);
         }
 
-        factsum -= numero;
+        factsum -= n;
 
-        if(factsum > numero)
+        if(factsum > n)
             cout << "abundant\n";
-        else if(factsum == numero)
+        else if(factsum == n)
             cout << "perfect\n";
         else
             cout << "deficient\n";

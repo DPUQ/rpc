@@ -145,31 +145,29 @@ vector<ll  > factorize(ll n)
 
 int main()
 {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
 
-    int nCasos;
-    ll numero;
-    scanf("%d",&nCasos);
-    vector<ll > resultado;
-    while(nCasos--)
+    int t;
+    ll n;
+    scanf("%d",&t);
+    while(t--)
     {
-        scanf("%lld",&numero);
+        scanf("%lld",&n);
 
-        resultado=factorize(numero);
-        sort(resultado.begin(),resultado.end());
-        for(ll i=0; i< resultado.size() ; i++)
+        vector<ll > facts=factorize(n);
+        sort(facts.begin(),facts.end());
+        for(ll i=0; i< facts.size() ; i++)
         {
-            if(i< resultado.size()-1)
-               cout << resultado[i] << " ";
+            if(i< facts.size()-1)
+               cout << facts[i] << " ";
             else
             {
-               cout << resultado[i] << "\n";
+               cout << facts[i] << "\n";
             }
         }
 
-        resultado.clear();
-
     }
-
 
     return 0;
 }
