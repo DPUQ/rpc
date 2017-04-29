@@ -1,3 +1,9 @@
+/**
+* Problem L: Rotations
+* Status: YES
+* Issue: Ad-hoc, Bitwise
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 #define debug(x) cout << #x << " = " << x << endl;
@@ -5,20 +11,16 @@ int main(){
 
 	int t;
 	cin >> t;
+	vector<bool> valid;
 
 	while(t--){
-		int valid[32], binValues[5];
-		bitset<32> bits_;
-		for(int i = 0; i < 32; i++){
-			bits_[i] = 0;
-			valid[i] = 0;
-		}
+        int binValues[5];
+		valid.assign(32,0);
 		long long n;
 		cin >> n;
+		bitset<32> bits_(n);
 		for(int i = 0; i < 5; i++)
 			binValues[i] = 1 << i;
-		for(long i = 0; i < 32; i++)
-			bits_[i] = (n & (1 << i)) != 0;
 
 		int cont = 0, pos;
 		long sum;
@@ -29,8 +31,8 @@ int main(){
 				if(bits_[pos] == 1)
 					sum += binValues[j];
 			}
-			if(valid[sum] == 0){
-				valid[sum] = 1;
+			if(!valid[sum]){
+				valid[sum] = true;
 				cont++;
 			}
 		}

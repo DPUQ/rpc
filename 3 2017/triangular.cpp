@@ -1,25 +1,32 @@
+/**
+* Problem H: Humbertov and the Triangular Spiral
+* Status: YES
+* Issue: Binary Search, Maths
+*/
+
 #include <bits/stdc++.h>
-#define MAX_VALOR 500000
+#define MAX_VAL 500000
 
 using namespace std;
-typedef long long ll;
-typedef vector<ll> vll;
 
-long long nv[MAX_VALOR];
+long long lv[MAX_VAL];
 
 
-long long niveles()
+long long levels()
 {
     long long i,p;
-    int impar=1;
-    for(i=0; i < MAX_VALOR; i++)
+    int odd=1;
+    for(i=0; i < MAX_VAL; i++)
     {
-        p=4*impar;
-        impar+=2;
-        if(i==0){
-        nv[0]=4;
-        }else{
-          nv[i]=p+nv[i-1];
+        p=4*odd;
+        odd+=2;
+        if(i==0)
+        {
+            lv[0]=4;
+        }
+        else
+        {
+            lv[i]=p+lv[i-1];
         }
 
     }
@@ -28,13 +35,13 @@ long long niveles()
 
 long long binarySearch(long long  x)
 {
-    long long r = MAX_VALOR, l = 0LL;
+    long long r = MAX_VAL, l = 0LL;
     while (l <= r)
     {
         long long m = l + (r-l)/2;
-        if (nv[m] == x)
+        if (lv[m] == x)
             return m;
-        if (nv[m] < x)
+        if (lv[m] < x)
             l = m + 1;
         else
             r = m - 1;
@@ -44,48 +51,54 @@ long long binarySearch(long long  x)
 
 int main()
 {
-    ios::sync_with_stdio(false);cin.tie(NULL);
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
 
-    long nCasos;
-    long long numero,nivel,numeros,aux;
+    long t;
+    long long n,level,points,aux;
     long long  x,y;
-    cin >> nCasos;
-    niveles();
+    cin >> t;
+    levels();
 
-    //ofstream of("a.txt");
-
-    while(nCasos--)
+    while(t--)
     {
         x=y=0;
-        cin >> numero;
-        nivel=binarySearch(numero);
-        numeros=4*(2*nivel+1);
-        numero= numero-nv[nivel-1];
-        if(nivel > 0)
+        cin >> n;
+        level=binarySearch(n);
+        points=4*(2*level+1);
+        n -= lv[level-1];
+        if(level > 0)
         {
-            y=nivel*-1;
-            x=nivel*2;
+            y = level*-1;
+            x = level*2;
         }
-        if(numero <= numeros/2)
+        if(n <= points/2)
         {
-            numero=numero-1;
-            x=x-numero;
+            n --;
+            x -= n;
         }
-        else if(numero > (numeros/2) && numero <= (numeros*3)/4 )
+        else
         {
-            aux=numero-(numeros/2);
-            x=x-(numeros/2)+aux+1;
-            y=y+aux;
-        }else{
-             aux=numero-(numeros*3)/4;
-             x=x-(numeros/2)+(((numeros*3)/4)-(numeros/2))+aux+1;
-             y=nivel-aux+1;
+            x -= (points/2);
+
+            if(n > (points/2) && n <= (points*3)/4 )
+            {
+                aux = n - (points/2);
+                x += (aux+1);
+                y += aux;
+            }
+            else
+            {
+                aux = n - (points*3)/4;
+                x += (((points*3)/4)-(points/2) + (aux+1));
+                y = level - aux+1;
+            }
         }
-         cout << x << " " << y << "\n";
+        cout << x << " " << y << "\n";
 
     }
 
 
-return 0;
+    return 0;
 }
 

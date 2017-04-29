@@ -1,3 +1,9 @@
+/**
+* Problem D: DPA Numbers I
+* Status: YES
+* Issue: Simple Math
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -13,7 +19,7 @@ int main(){
 			if(n % i == 0 && i != n){
 				sum += i;
 			}
-			
+
 		}
 
 		if(sum == n)

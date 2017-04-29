@@ -1,3 +1,9 @@
+/**
+* Problem J: Tobby Primes
+* Status: YES
+* Issue: Prime factor decomposition (Pollard rho's)
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 typedef  unsigned long long  ull;

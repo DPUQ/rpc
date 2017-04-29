@@ -1,3 +1,8 @@
+/**
+* Problem F: Felipe and the Sequence
+* Status: YES
+* Issue: Maths
+*/
 #include<bits/stdc++.h>
 
 using namespace std;
